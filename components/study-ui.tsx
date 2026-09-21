@@ -1,0 +1,52 @@
+"use client";
+import { useState } from "react";
+import { Volume2, Check, ArrowRight, BookOpen, RotateCcw } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { toast } from "sonner";
+import type { Word, Lesson, Question, Reading, StudyState } from "@/lib/study";
+export type Save=(body:Record<string,unknown>)=>Promise<{state:StudyState;feedback:{correct:boolean;answers:string[];explanation:string}|null}|null>;
+export function speak(text:string,slow=false,accent="en-GB"){
+ if(!("speechSynthesis" in window)){toast.error("Bu tarayıcı seslendirmeyi desteklemiyor.");return}
+ speechSynthesis.cancel();
+ const u=new SpeechSynthesisUtterance(text);u.lang=accent;u.rate=slow?.7:1;
+ const voices=speechSynthesis.getVoices();const voice=voices.find(v=>v.lang===accent)||voices.find(v=>v.lang.startsWith("en"));
+ if(voice)u.voice=voice;
+ u.onerror=e=>{if(e.error!=="interrupted"&&e.error!=="canceled")toast.error("Ses çalınamadı. Cihazında İngilizce ses desteğini kontrol et.")};
+ speechSynthesis.speak(u);
+}
+export function AudioButton({text,slow=false,accent="en-GB"}:{text:string;slow?:boolean;accent?:string}){
+ return <button className={slow?"listen-button":"icon-button"} title={slow?"Yavaş dinle":"Dinle"} aria-label={(slow?"Yavaş dinle: ":"Dinle: ")+text.slice(0,70)} onClick={()=>speak(text,slow,accent)}><Volume2 size={18}/>{slow&&<span>Yavaş</span>}</button>
+}
+export function WordCard({word,onRate,busy,accent}:{word:Word;onRate?:(r:string)=>void;busy?:boolean;accent:string}){
+ const [open,setOpen]=useState(false);
+ return <div className="flashcard"><div className="card-top"><span className="tag">{word.part_of_speech}</span><div className="audio-actions"><AudioButton text={word.word} accent={accent}/><AudioButton text={word.word} slow accent={accent}/></div></div><div className="word-face"><p className="card-hint">Önce anlamını hatırlamayı dene.</p><h2 lang="en">{word.word}</h2>{open&&<div className="answer"><strong>{word.turkish_meaning}</strong><div className="example-with-audio"><p lang="en">{word.example_en}</p><AudioButton text={word.example_en} accent={accent}/></div><p>{word.example_tr}</p></div>}</div>{!open?<Button className="primary-button" onClick={()=>setOpen(true)}>Anlamını göster <ArrowRight size={18}/></Button>:onRate?<><p className="rating-label">Hatırlamak nasıldı?</p><div className="rating-buttons"><Button variant="outline" disabled={busy} onClick={()=>onRate("again")}>Tekrar edelim<small>10 dakika sonra</small></Button><Button variant="outline" disabled={busy} onClick={()=>onRate("hard")}>Zorlandım<small>Yarın</small></Button><Button disabled={busy} onClick={()=>onRate("good")}>Hatırladım<small>Aralığı artır</small></Button></div></>:<Button variant="outline" onClick={()=>setOpen(false)}>Anlamını gizle</Button>}</div>
+}
+export function Quiz({question,save,busy,disabled,onNext}:{question:Question;save:Save;busy:boolean;disabled?:boolean;onNext?:()=>void}){
+ const [value,setValue]=useState(""),[feedback,setFeedback]=useState<{correct:boolean;answers:string[];explanation:string}|null>(null);
+ const [requestId,setRequestId]=useState("");
+ const ordering=question.id.startsWith("order-");
+ const [chosen,setChosen]=useState<number[]>([]);
+ const [tokens]=useState(()=>question.answers[0].replace(/[.!?]$/," ").trim().split(/\s+/).map((word,i)=>({word,sort:((i+1)*37+question.id.length*13)%101})).sort((a,b)=>a.sort-b.sort).map(t=>t.word));
+ function selectToken(index:number){const next=[...chosen,index];setChosen(next);setValue(next.map(i=>tokens[i]).join(" "));setRequestId("")}
+ function undo(){const next=chosen.slice(0,-1);setChosen(next);setValue(next.map(i=>tokens[i]).join(" "));setRequestId("")}
+
+ async function submit(selfCorrect=false){
+  const id=requestId||crypto.randomUUID();setRequestId(id);
+  const result=await save({action:"answer",questionId:question.id,answer:value,requestId:id,selfCorrect});
+  if(result){setFeedback(result.feedback);setRequestId("")}
+ }
+ return <div className="quiz-box"><span className="eyebrow">SIRA SENDE</span><h3>{question.prompt}</h3>{ordering&&<div className="ordering"><p className="small muted">Kelimelere sırayla dokunarak cümleyi kur.</p><div className="token-bank">{tokens.map((token,i)=><Button key={i} variant="outline" disabled={chosen.includes(i)||!!feedback||busy} onClick={()=>selectToken(i)}>{token}</Button>)}</div><Button variant="ghost" disabled={!chosen.length||!!feedback||busy} onClick={undo}>Son kelimeyi geri al</Button></div>}<form onSubmit={e=>{e.preventDefault();if(value.trim()&&!busy&&!feedback&&!disabled)void submit()}}><label className="sr-only" htmlFor={"q-"+question.id}>İngilizce cevabın</label><Input id={"q-"+question.id} className="answer-input" readOnly={ordering} value={value} onChange={e=>{setValue(e.target.value);setRequestId("")}} placeholder="İngilizce cevabını yaz…" autoComplete="off" spellCheck={false} disabled={!!feedback||busy}/><Button type="submit" disabled={busy||disabled||!value.trim()||!!feedback} className="primary-button">{busy?"Kaydediliyor…":"Cevabımı kontrol et"}</Button></form>{feedback&&<div aria-live="polite" className={"feedback "+(feedback.correct?"correct":"compare")}><strong>{feedback.correct?"Tamam, bu cevap doğru.":"Cevabını birlikte karşılaştıralım."}</strong><p className="model-answer" lang="en">{feedback.answers.join(" / ")}</p><p>{feedback.explanation}</p>{!feedback.correct&&<><p className="small">Kontrol, kayıtlı cevaplarla yapılır. Farklı bir doğru ifade kullanmış olabilirsin.</p><Button variant="outline" disabled={busy||disabled} onClick={()=>void submit(true)}>Cevabım da doğru — kendim kontrol ettim</Button></>}<div className="button-row"><Button variant="ghost" onClick={()=>{setFeedback(null);setValue("");setChosen([]);setRequestId("")}}><RotateCcw size={16}/>Yeniden dene</Button>{onNext&&<Button onClick={onNext}>Sonraki soru<ArrowRight size={16}/></Button>}</div></div>}</div>
+}
+export function LessonView({lesson,save,busy,disabled,completed,accent,onBack,onPractice}:{lesson:Lesson;save:Save;busy:boolean;disabled:boolean;completed:boolean;accent:string;onBack:()=>void;onPractice:(id:string)=>void}){
+ const [requestId]=useState(()=>crypto.randomUUID());
+ return <><button className="back-link" onClick={onBack}>← Konulara dön</button><div className="page-heading"><div><p className="eyebrow">{lesson.subtitle}</p><h1>{lesson.title}</h1></div>{completed&&<span className="complete-badge"><Check size={16}/>Çalışıldı</span>}</div><article className="lesson"><div className="lesson-intro"><BookOpen size={26}/><p>{lesson.intro}</p></div><Tabs defaultValue="explain"><TabsList className="lesson-tabs"><TabsTrigger value="explain">Anlatım</TabsTrigger><TabsTrigger value="examples">{lesson.examples.length} örnek</TabsTrigger><TabsTrigger value="practice">Alıştırma</TabsTrigger></TabsList><TabsContent value="explain"><section className="lesson-section"><h2>Ne zaman kullanırım?</h2><ul>{lesson.usage.map(t=><li key={t}>{t}</li>)}</ul></section><section className="lesson-section"><h2>Cümleyi nasıl kurarım?</h2><div className="formula-list">{lesson.forms.map(t=><div key={t}>{t}</div>)}</div></section><section className="comparison-box"><h3>Yan yana düşün</h3><p>{lesson.comparison}</p></section><section className="lesson-section"><h2>Buraya dikkat</h2><ul>{lesson.tips.map(t=><li key={t}>{t}</li>)}</ul></section><div className="lesson-section"><h2>Bir örnekle başla</h2><ExampleRow example={lesson.examples[0]} accent={accent}/></div></TabsContent><TabsContent value="examples"><p className="muted mb-5">Cümleyi oku, dinle ve kendi hayatına göre değiştir.</p><div className="examples-list">{lesson.examples.map((ex,i)=><ExampleRow key={ex.en} example={ex} index={i+1} accent={accent}/>)}</div></TabsContent><TabsContent value="practice"><div className="quiz-stack">{lesson.questions.map(q=><Quiz key={q.id} question={q} save={save} busy={busy} disabled={disabled}/>)}</div></TabsContent></Tabs><div className="lesson-footer"><Button className="primary-button" disabled={busy||disabled} onClick={async()=>{const r=await save({action:"completeLesson",lessonId:lesson.id,requestId});if(r)toast.success("Ders ilerlemene kaydedildi.")}}><Check size={18}/>{completed?"Tekrar çalıştım":"Konuyu çalıştım"}</Button><Button variant="outline" onClick={()=>onPractice(lesson.questions[0].id)}>Cümle atölyesine geç<ArrowRight size={16}/></Button></div></article></>
+}
+export function ExampleRow({example,index,accent}:{example:{en:string;tr:string};index?:number;accent:string}){
+ return <div className="example-row">{index&&<span className="example-number">{String(index).padStart(2,"0")}</span>}<div><p lang="en">{example.en}</p><p className="translation">{example.tr}</p></div><AudioButton text={example.en} accent={accent}/></div>
+}
+export function ReadingView({reading,accent,onWord,save,busy,disabled}:{reading:Reading;accent:string;onWord:(s:string)=>void;save:Save;busy:boolean;disabled:boolean}){
+ const [translate,setTranslate]=useState(false);
+ return <article className="lesson"><div className="reading-title"><div><p className="eyebrow">{reading.subtitle}</p><h2>{reading.title}</h2></div><div className="audio-actions"><AudioButton text={reading.lines.map(l=>l.en).join(" ")} accent={accent}/><AudioButton text={reading.lines.map(l=>l.en).join(" ")} slow accent={accent}/></div></div><p className="small muted mb-5">Anlamını görmek için bir kelimeye dokun. Sesler cihazının konuşma desteğiyle üretilir.</p><div className="reading-text">{reading.lines.map((line,i)=><div key={i}><p lang="en">{line.en.split(/([A-Za-z]+(?:'[A-Za-z]+)?)/).map((t,j)=>/^[A-Za-z]/.test(t)?<button key={j} className="reading-word" onClick={()=>onWord(t)}>{t}</button>:t)}</p>{translate&&<p className="translation">{line.tr}</p>}</div>)}</div><Button className="my-5" variant="outline" onClick={()=>setTranslate(!translate)}>{translate?"Çeviriyi gizle":"Türkçe çeviriyi göster"}</Button><div className="vocab-strip">{reading.vocabulary.map(v=><button key={v.word} onClick={()=>onWord(v.word)}><strong>{v.word}</strong><span>{v.meaning}</span></button>)}</div><section className="lesson-section"><h2>Ne anladın?</h2><div className="quiz-stack mt-4">{reading.questions.map(q=><Quiz key={q.id} question={q} save={save} busy={busy} disabled={disabled}/>)}</div></section></article>
+}

@@ -1,0 +1,11 @@
+import lessonData from "./lessons.json";
+import verbData from "./verbs.json";
+import readingData from "./readings.json";
+import exerciseData from "./exercises.json";
+import type { Lesson, Verb, Reading, Question } from "@/lib/study";
+export const lessons=lessonData as Lesson[];
+export const verbs=verbData as Verb[];
+export const readings=readingData as Reading[];
+export const verbQuestions:Question[]=verbs.flatMap(v=>["v2","v3"].map(form=>({id:"verb-"+v.word+"-"+form,prompt:v.word+" ("+v.meaning+") → "+form.toUpperCase()+" biçimini yaz.",answers:(form==="v2"?v.v2:v.v3).split(" / "),explanation:v.word+" → "+v.v2+" → "+v.v3+". "+(form==="v2"?"V2, Past Simple olumlu cümlede kullanılır.":"V3, perfect ve passive yapılarında kullanılır.")+(v.note?" "+v.note:"")})));
+export const allQuestions=[...lessons.flatMap(l=>l.questions),...readings.flatMap(r=>r.questions),...verbQuestions,...exerciseData];
+export const groupNames:Record<string,string>={tenses:"Zamanlar",auxiliary:"Yardımcı fiiller",grammar:"Cümle kurmanın temelleri",phrases:"Günlük kalıplar",confusing:"Sık karıştırılanlar"};

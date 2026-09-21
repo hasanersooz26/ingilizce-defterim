@@ -1,0 +1,194 @@
+[
+  {
+    "id": "order-1",
+    "prompt": "Kelimeleri sırala: Her gün İngilizce çalışırım.",
+    "answers": [
+      "I study English every day."
+    ],
+    "explanation": "Özne I, fiil study, nesne English; zaman ifadesi en sonda."
+  },
+  {
+    "id": "order-2",
+    "prompt": "Kelimeleri sırala: O şimdi bir kitap okuyor.",
+    "answers": [
+      "She is reading a book now."
+    ],
+    "explanation": "Şu anda süren eylem: she + is + reading."
+  },
+  {
+    "id": "order-3",
+    "prompt": "Kelimeleri sırala: Dün işe gitmedim.",
+    "answers": [
+      "I did not go to work yesterday."
+    ],
+    "explanation": "Did not sonrasında go yalın biçimde kalır."
+  },
+  {
+    "id": "order-4",
+    "prompt": "Kelimeleri sırala: Hiç Londra'da bulundun mu?",
+    "answers": [
+      "Have you ever been to London?"
+    ],
+    "explanation": "Perfect sorusunda have öznenin önüne gelir."
+  },
+  {
+    "id": "order-5",
+    "prompt": "Kelimeleri sırala: Seni yarın arayacağım.",
+    "answers": [
+      "I will call you tomorrow."
+    ],
+    "explanation": "Will + V1; nesne you ve zaman tomorrow."
+  },
+  {
+    "id": "order-6",
+    "prompt": "Kelimeleri sırala: Biraz dinlenmelisin.",
+    "answers": [
+      "You should get some rest."
+    ],
+    "explanation": "Should sonrasında yalın get gelir."
+  },
+  {
+    "id": "order-7",
+    "prompt": "Kelimeleri sırala: Erken gelmek zorunda değilsin.",
+    "answers": [
+      "You do not have to come early."
+    ],
+    "explanation": "Do not have to zorunluluk olmadığını belirtir."
+  },
+  {
+    "id": "order-8",
+    "prompt": "Kelimeleri sırala: Bir kahve alabilir miyim?",
+    "answers": [
+      "Can I have a coffee?"
+    ],
+    "explanation": "İzin/rica sorusunda can öne gelir; have asıl fiildir."
+  },
+  {
+    "id": "order-9",
+    "prompt": "Kelimeleri sırala: İki saattir bekliyoruz.",
+    "answers": [
+      "We have been waiting for two hours."
+    ],
+    "explanation": "Süre vurgusu: have been + waiting; for two hours."
+  },
+  {
+    "id": "order-10",
+    "prompt": "Kelimeleri sırala: Erken kalkmaya alışkınım.",
+    "answers": [
+      "I am used to getting up early."
+    ],
+    "explanation": "Be used to ardından -ing biçimi gerekir."
+  },
+  {
+    "id": "order-11",
+    "prompt": "Kelimeleri sırala: Bu çanta daha ucuz.",
+    "answers": [
+      "This bag is cheaper."
+    ],
+    "explanation": "This bag özne, is bağlayıcı fiil, cheaper karşılaştırma sıfatıdır."
+  },
+  {
+    "id": "order-12",
+    "prompt": "Kelimeleri sırala: Lütfen ışığı kapat.",
+    "answers": [
+      "Please turn the light off."
+    ],
+    "explanation": "Turn off ayrılabilir: turn the light off."
+  },
+  {
+    "id": "transform-1",
+    "prompt": "She works here. → Olumsuz yap.",
+    "answers": [
+      "She does not work here."
+    ],
+    "explanation": "Does not kişi ekini taşır; works yerine work kullanılır."
+  },
+  {
+    "id": "transform-2",
+    "prompt": "They work here. → Soru yap.",
+    "answers": [
+      "Do they work here?"
+    ],
+    "explanation": "Present Simple, they: Do + they + work?"
+  },
+  {
+    "id": "transform-3",
+    "prompt": "He is reading. → Olumsuz yap.",
+    "answers": [
+      "He is not reading."
+    ],
+    "explanation": "Be yardımcı fiilinin ardından not gelir."
+  },
+  {
+    "id": "transform-4",
+    "prompt": "You are waiting. → Soru yap.",
+    "answers": [
+      "Are you waiting?"
+    ],
+    "explanation": "Are öznenin önüne gelir."
+  },
+  {
+    "id": "transform-5",
+    "prompt": "She went home. → Olumsuz yap.",
+    "answers": [
+      "She did not go home."
+    ],
+    "explanation": "Did not ardından went değil go kullanılır."
+  },
+  {
+    "id": "transform-6",
+    "prompt": "They bought a car. → Soru yap.",
+    "answers": [
+      "Did they buy a car?"
+    ],
+    "explanation": "Did geçmişi taşır; bought → buy."
+  },
+  {
+    "id": "transform-7",
+    "prompt": "He has finished. → Olumsuz yap.",
+    "answers": [
+      "He has not finished."
+    ],
+    "explanation": "Has ardından not eklenir; V3 finished değişmez."
+  },
+  {
+    "id": "transform-8",
+    "prompt": "You have eaten. → Soru yap.",
+    "answers": [
+      "Have you eaten?"
+    ],
+    "explanation": "Have öne gelir; eaten V3 olarak kalır."
+  },
+  {
+    "id": "transform-9",
+    "prompt": "She can swim. → Olumsuz yap.",
+    "answers": [
+      "She cannot swim."
+    ],
+    "explanation": "Can not / cannot / can't kabul edilir."
+  },
+  {
+    "id": "transform-10",
+    "prompt": "You will help. → Soru yap.",
+    "answers": [
+      "Will you help?"
+    ],
+    "explanation": "Will öznenin önüne geçer."
+  },
+  {
+    "id": "transform-11",
+    "prompt": "They were sleeping. → Olumsuz yap.",
+    "answers": [
+      "They were not sleeping."
+    ],
+    "explanation": "Were ardından not gelir."
+  },
+  {
+    "id": "transform-12",
+    "prompt": "She had left. → Soru yap.",
+    "answers": [
+      "Had she left?"
+    ],
+    "explanation": "Past Perfect sorusunda had öne gelir."
+  }
+]

@@ -1,0 +1,281 @@
+[
+  {
+    "id": "morning",
+    "title": "A small change",
+    "subtitle": "Sabah rutinleri · Present Simple & Continuous",
+    "lines": [
+      {
+        "en": "Ece usually goes to work by car.",
+        "tr": "Ece genellikle işe arabayla gider."
+      },
+      {
+        "en": "This week, she is taking the bus.",
+        "tr": "Bu hafta otobüse biniyor."
+      },
+      {
+        "en": "She reads a book on the way to work.",
+        "tr": "İşe giderken kitap okur."
+      },
+      {
+        "en": "Today, she is reading a story about a small village.",
+        "tr": "Bugün küçük bir köy hakkında bir hikâye okuyor."
+      },
+      {
+        "en": "The journey takes thirty minutes.",
+        "tr": "Yolculuk otuz dakika sürer."
+      },
+      {
+        "en": "She enjoys having some quiet time in the morning.",
+        "tr": "Sabahları biraz sakin zaman geçirmekten hoşlanır."
+      }
+    ],
+    "vocabulary": [
+      {
+        "word": "usually",
+        "meaning": "genellikle"
+      },
+      {
+        "word": "journey",
+        "meaning": "yolculuk"
+      },
+      {
+        "word": "village",
+        "meaning": "köy"
+      },
+      {
+        "word": "quiet",
+        "meaning": "sessiz, sakin"
+      }
+    ],
+    "questions": [
+      {
+        "id": "morning-1",
+        "prompt": "Ece bu hafta işe nasıl gidiyor? İngilizce kısa cevap yaz.",
+        "answers": [
+          "By bus.",
+          "She is taking the bus.",
+          "She is going to work by bus."
+        ],
+        "explanation": "This week, she is taking the bus cümlesi bu haftaki geçici değişikliği anlatır."
+      },
+      {
+        "id": "morning-2",
+        "prompt": "Yolculuk kaç dakika sürüyor? İngilizce yaz.",
+        "answers": [
+          "Thirty minutes.",
+          "It takes thirty minutes.",
+          "30 minutes."
+        ],
+        "explanation": "The journey takes thirty minutes: yolculuk otuz dakika sürer."
+      }
+    ]
+  },
+  {
+    "id": "lost-keys",
+    "title": "Where are my keys?",
+    "subtitle": "Kayıp anahtarlar · Geçmiş ve şimdi",
+    "lines": [
+      {
+        "en": "\"I have lost my keys,\" said Can.",
+        "tr": "Can, anahtarlarımı kaybettim, dedi."
+      },
+      {
+        "en": "He looked in his bag, but they were not there.",
+        "tr": "Çantasına baktı ama orada değillerdi."
+      },
+      {
+        "en": "His sister asked him to think about the morning.",
+        "tr": "Kız kardeşi ondan sabahı düşünmesini istedi."
+      },
+      {
+        "en": "He had put the keys on the kitchen table before breakfast.",
+        "tr": "Kahvaltıdan önce anahtarları mutfak masasına koymuştu."
+      },
+      {
+        "en": "When he returned to the kitchen, he found them under a newspaper.",
+        "tr": "Mutfağa döndüğünde onları bir gazetenin altında buldu."
+      },
+      {
+        "en": "\"Next time, I will use the key hook,\" he said.",
+        "tr": "Bir dahaki sefere anahtar askısını kullanacağım, dedi."
+      }
+    ],
+    "vocabulary": [
+      {
+        "word": "keys",
+        "meaning": "anahtarlar"
+      },
+      {
+        "word": "newspaper",
+        "meaning": "gazete"
+      },
+      {
+        "word": "returned",
+        "meaning": "geri döndü"
+      },
+      {
+        "word": "under",
+        "meaning": "altında"
+      }
+    ],
+    "questions": [
+      {
+        "id": "lost-keys-1",
+        "prompt": "Anahtarlar neyin altındaydı? İngilizce yaz.",
+        "answers": [
+          "Under a newspaper.",
+          "They were under a newspaper."
+        ],
+        "explanation": "Can anahtarları bir gazetenin altında buldu."
+      },
+      {
+        "id": "lost-keys-2",
+        "prompt": "He had ___ the keys on the table. Put fiilini tamamla.",
+        "answers": [
+          "put"
+        ],
+        "explanation": "Put fiilinin V1, V2 ve V3 yazılışı aynıdır. Had ardından V3 gerekir."
+      }
+    ]
+  },
+  {
+    "id": "cafe",
+    "title": "At the café",
+    "subtitle": "Sipariş verme · Nazik istekler",
+    "lines": [
+      {
+        "en": "Customer: Could I have a cup of tea, please?",
+        "tr": "Müşteri: Bir fincan çay alabilir miyim lütfen?"
+      },
+      {
+        "en": "Server: Of course. Would you like anything to eat?",
+        "tr": "Görevli: Elbette. Yiyecek bir şey ister misiniz?"
+      },
+      {
+        "en": "Customer: I would like a cheese sandwich.",
+        "tr": "Müşteri: Bir peynirli sandviç istiyorum."
+      },
+      {
+        "en": "Server: Would you like to sit inside or outside?",
+        "tr": "Görevli: İçeride mi dışarıda mı oturmak istersiniz?"
+      },
+      {
+        "en": "Customer: Outside, please. Can I pay by card?",
+        "tr": "Müşteri: Dışarıda lütfen. Kartla ödeyebilir miyim?"
+      },
+      {
+        "en": "Server: Yes, you can. Your order will be ready soon.",
+        "tr": "Görevli: Evet, ödeyebilirsiniz. Siparişiniz birazdan hazır olacak."
+      }
+    ],
+    "vocabulary": [
+      {
+        "word": "customer",
+        "meaning": "müşteri"
+      },
+      {
+        "word": "order",
+        "meaning": "sipariş"
+      },
+      {
+        "word": "outside",
+        "meaning": "dışarıda"
+      },
+      {
+        "word": "ready",
+        "meaning": "hazır"
+      }
+    ],
+    "questions": [
+      {
+        "id": "cafe-1",
+        "prompt": "Müşteri ne içmek istiyor? İngilizce yaz.",
+        "answers": [
+          "Tea.",
+          "A cup of tea.",
+          "The customer would like a cup of tea."
+        ],
+        "explanation": "Müşteri ilk cümlede bir fincan çay istiyor."
+      },
+      {
+        "id": "cafe-2",
+        "prompt": "Kartla ödeyebilir miyim? İngilizce yaz.",
+        "answers": [
+          "Can I pay by card?",
+          "Could I pay by card?"
+        ],
+        "explanation": "Can/Could I...? izin veya imkân sorar; pay by card kartla ödemektir."
+      }
+    ]
+  },
+  {
+    "id": "weekend",
+    "title": "A weekend plan",
+    "subtitle": "Plan, ihtimal ve tavsiye",
+    "lines": [
+      {
+        "en": "We are going to visit a small town on Saturday.",
+        "tr": "Cumartesi günü küçük bir kasabayı ziyaret edeceğiz."
+      },
+      {
+        "en": "We have already bought our train tickets.",
+        "tr": "Tren biletlerimizi çoktan aldık."
+      },
+      {
+        "en": "It might rain, so we should take our umbrellas.",
+        "tr": "Yağmur yağabilir, bu yüzden şemsiyelerimizi almalıyız."
+      },
+      {
+        "en": "If the weather is good, we will walk by the river.",
+        "tr": "Hava iyi olursa nehir kenarında yürüyeceğiz."
+      },
+      {
+        "en": "We do not have to leave early on Sunday.",
+        "tr": "Pazar günü erken ayrılmak zorunda değiliz."
+      },
+      {
+        "en": "By Sunday evening, we will have visited the museum and tried the local food.",
+        "tr": "Pazar akşamına kadar müzeyi ziyaret etmiş ve yöresel yemekleri denemiş olacağız."
+      }
+    ],
+    "vocabulary": [
+      {
+        "word": "town",
+        "meaning": "kasaba"
+      },
+      {
+        "word": "umbrella",
+        "meaning": "şemsiye"
+      },
+      {
+        "word": "river",
+        "meaning": "nehir"
+      },
+      {
+        "word": "local",
+        "meaning": "yerel, yöresel"
+      }
+    ],
+    "questions": [
+      {
+        "id": "weekend-1",
+        "prompt": "Hava iyiyse nerede yürüyecekler? İngilizce yaz.",
+        "answers": [
+          "By the river.",
+          "They will walk by the river.",
+          "We will walk by the river."
+        ],
+        "explanation": "If the weather is good, we will walk by the river cümlesi bu planı anlatır."
+      },
+      {
+        "id": "weekend-2",
+        "prompt": "They ___ leave early on Sunday. Zorunluluk olmadığını belirt.",
+        "answers": [
+          "do not have to",
+          "do not need to"
+        ],
+        "explanation": "Zorunluluk yoksa do not have to / do not need to kullanılır; must not yasak bildirir."
+      }
+    ]
+  }
+]

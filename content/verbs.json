@@ -1,0 +1,1382 @@
+[
+  {
+    "word": "be",
+    "v2": "was / were",
+    "v3": "been",
+    "meaning": "olmak",
+    "regular": false,
+    "note": "V1 kişiye göre am/is/are olur. V2: I/he/she/it was; you/we/they were.",
+    "wordId": 475,
+    "examples": [
+      {
+        "en": "I am ready.",
+        "tr": "Hazırım."
+      },
+      {
+        "en": "We were tired yesterday.",
+        "tr": "Dün yorgunduk."
+      },
+      {
+        "en": "I have been to London.",
+        "tr": "Londra'da bulundum."
+      }
+    ]
+  },
+  {
+    "word": "have",
+    "v2": "had",
+    "v3": "had",
+    "meaning": "sahip olmak; yemek yemek",
+    "regular": false,
+    "note": "",
+    "wordId": 2466,
+    "examples": [
+      {
+        "en": "I have breakfast at seven.",
+        "tr": "Saat yedide kahvaltı yaparım."
+      },
+      {
+        "en": "I had breakfast early.",
+        "tr": "Erken kahvaltı yaptım."
+      },
+      {
+        "en": "I have had breakfast.",
+        "tr": "Kahvaltı yaptım."
+      }
+    ]
+  },
+  {
+    "word": "do",
+    "v2": "did",
+    "v3": "done",
+    "meaning": "yapmak",
+    "regular": false,
+    "note": "",
+    "wordId": 1590,
+    "examples": [
+      {
+        "en": "I do my homework after school.",
+        "tr": "Ödevimi okuldan sonra yaparım."
+      },
+      {
+        "en": "I did my homework yesterday.",
+        "tr": "Dün ödevimi yaptım."
+      },
+      {
+        "en": "I have done my homework.",
+        "tr": "Ödevimi bitirdim."
+      }
+    ]
+  },
+  {
+    "word": "go",
+    "v2": "went",
+    "v3": "gone",
+    "meaning": "gitmek",
+    "regular": false,
+    "note": "Gone gitti ve henüz dönmedi anlamı taşıyabilir; been to gidip dönme deneyiminde kullanılır.",
+    "wordId": 2342,
+    "examples": [
+      {
+        "en": "I go to work by bus.",
+        "tr": "İşe otobüsle giderim."
+      },
+      {
+        "en": "I went to work early.",
+        "tr": "İşe erken gittim."
+      },
+      {
+        "en": "She has gone home.",
+        "tr": "O eve gitti; henüz dönmedi."
+      }
+    ]
+  },
+  {
+    "word": "come",
+    "v2": "came",
+    "v3": "come",
+    "meaning": "gelmek",
+    "regular": false,
+    "note": "",
+    "wordId": 961,
+    "examples": [
+      {
+        "en": "I come here every week.",
+        "tr": "Her hafta buraya gelirim."
+      },
+      {
+        "en": "I came here yesterday.",
+        "tr": "Dün buraya geldim."
+      },
+      {
+        "en": "He has come to help us.",
+        "tr": "Bize yardım etmeye geldi."
+      }
+    ]
+  },
+  {
+    "word": "get",
+    "v2": "got",
+    "v3": "got / gotten",
+    "meaning": "almak; edinmek; hâle gelmek",
+    "regular": false,
+    "note": "V3 got İngiliz İngilizcesinde yaygındır; Amerikan İngilizcesinde birçok anlamda gotten kullanılır. Have got sahiplik kalıbı ayrıca öğrenilir.",
+    "wordId": 2322,
+    "examples": [
+      {
+        "en": "I get many emails.",
+        "tr": "Çok e-posta alırım."
+      },
+      {
+        "en": "I got your message.",
+        "tr": "Mesajını aldım."
+      },
+      {
+        "en": "I have got better at cooking.",
+        "tr": "Yemek yapmada daha iyi hâle geldim."
+      }
+    ]
+  },
+  {
+    "word": "make",
+    "v2": "made",
+    "v3": "made",
+    "meaning": "yapmak; üretmek",
+    "regular": false,
+    "note": "",
+    "wordId": 3174,
+    "examples": [
+      {
+        "en": "I make coffee every morning.",
+        "tr": "Her sabah kahve yaparım."
+      },
+      {
+        "en": "I made a cake yesterday.",
+        "tr": "Dün kek yaptım."
+      },
+      {
+        "en": "I have made a mistake.",
+        "tr": "Bir hata yaptım."
+      }
+    ]
+  },
+  {
+    "word": "take",
+    "v2": "took",
+    "v3": "taken",
+    "meaning": "almak; götürmek",
+    "regular": false,
+    "note": "",
+    "wordId": 5246,
+    "examples": [
+      {
+        "en": "I take the bus to work.",
+        "tr": "İşe otobüsle giderim."
+      },
+      {
+        "en": "I took a photo.",
+        "tr": "Bir fotoğraf çektim."
+      },
+      {
+        "en": "I have taken your advice.",
+        "tr": "Tavsiyene uydum."
+      }
+    ]
+  },
+  {
+    "word": "give",
+    "v2": "gave",
+    "v3": "given",
+    "meaning": "vermek",
+    "regular": false,
+    "note": "",
+    "wordId": 2330,
+    "examples": [
+      {
+        "en": "I give my cat food every morning.",
+        "tr": "Her sabah kedime mama veririm."
+      },
+      {
+        "en": "I gave her a book.",
+        "tr": "Ona bir kitap verdim."
+      },
+      {
+        "en": "I have given him my number.",
+        "tr": "Ona numaramı verdim."
+      }
+    ]
+  },
+  {
+    "word": "see",
+    "v2": "saw",
+    "v3": "seen",
+    "meaning": "görmek",
+    "regular": false,
+    "note": "",
+    "wordId": 4655,
+    "examples": [
+      {
+        "en": "I see my friends on Sundays.",
+        "tr": "Pazar günleri arkadaşlarımla görüşürüm."
+      },
+      {
+        "en": "I saw Ece yesterday.",
+        "tr": "Dün Ece'yi gördüm."
+      },
+      {
+        "en": "I have seen this film.",
+        "tr": "Bu filmi izledim."
+      }
+    ]
+  },
+  {
+    "word": "know",
+    "v2": "knew",
+    "v3": "known",
+    "meaning": "bilmek; tanımak",
+    "regular": false,
+    "note": "",
+    "wordId": 2927,
+    "examples": [
+      {
+        "en": "I know the answer.",
+        "tr": "Cevabı biliyorum."
+      },
+      {
+        "en": "I knew the answer yesterday.",
+        "tr": "Dün cevabı biliyordum."
+      },
+      {
+        "en": "I have known her for years.",
+        "tr": "Onu yıllardır tanıyorum."
+      }
+    ]
+  },
+  {
+    "word": "think",
+    "v2": "thought",
+    "v3": "thought",
+    "meaning": "düşünmek; sanmak",
+    "regular": false,
+    "note": "",
+    "wordId": 5357,
+    "examples": [
+      {
+        "en": "I think it is useful.",
+        "tr": "Bence bu faydalı."
+      },
+      {
+        "en": "I thought you were at home.",
+        "tr": "Evde olduğunu sanmıştım."
+      },
+      {
+        "en": "I have thought about your idea.",
+        "tr": "Fikrin hakkında düşündüm."
+      }
+    ]
+  },
+  {
+    "word": "say",
+    "v2": "said",
+    "v3": "said",
+    "meaning": "söylemek; demek",
+    "regular": false,
+    "note": "",
+    "wordId": 4595,
+    "examples": [
+      {
+        "en": "I say hello to my neighbours.",
+        "tr": "Komşularıma selam veririm."
+      },
+      {
+        "en": "I said hello to him.",
+        "tr": "Ona selam verdim."
+      },
+      {
+        "en": "I have said enough.",
+        "tr": "Yeterince şey söyledim."
+      }
+    ]
+  },
+  {
+    "word": "tell",
+    "v2": "told",
+    "v3": "told",
+    "meaning": "anlatmak; söylemek",
+    "regular": false,
+    "note": "",
+    "wordId": 5283,
+    "examples": [
+      {
+        "en": "I tell my sister everything.",
+        "tr": "Kız kardeşime her şeyi anlatırım."
+      },
+      {
+        "en": "I told her the news.",
+        "tr": "Ona haberi söyledim."
+      },
+      {
+        "en": "I have told you the truth.",
+        "tr": "Sana gerçeği söyledim."
+      }
+    ]
+  },
+  {
+    "word": "find",
+    "v2": "found",
+    "v3": "found",
+    "meaning": "bulmak",
+    "regular": false,
+    "note": "",
+    "wordId": 2100,
+    "examples": [
+      {
+        "en": "I find this book helpful.",
+        "tr": "Bu kitabı faydalı buluyorum."
+      },
+      {
+        "en": "I found my keys.",
+        "tr": "Anahtarlarımı buldum."
+      },
+      {
+        "en": "I have found a new job.",
+        "tr": "Yeni bir iş buldum."
+      }
+    ]
+  },
+  {
+    "word": "feel",
+    "v2": "felt",
+    "v3": "felt",
+    "meaning": "hissetmek",
+    "regular": false,
+    "note": "",
+    "wordId": 2060,
+    "examples": [
+      {
+        "en": "I feel happy today.",
+        "tr": "Bugün mutlu hissediyorum."
+      },
+      {
+        "en": "I felt tired yesterday.",
+        "tr": "Dün yorgun hissettim."
+      },
+      {
+        "en": "I have felt better since Monday.",
+        "tr": "Pazartesiden beri kendimi daha iyi hissediyorum."
+      }
+    ]
+  },
+  {
+    "word": "leave",
+    "v2": "left",
+    "v3": "left",
+    "meaning": "ayrılmak; bırakmak",
+    "regular": false,
+    "note": "",
+    "wordId": 3000,
+    "examples": [
+      {
+        "en": "I leave home at eight.",
+        "tr": "Evden saat sekizde çıkarım."
+      },
+      {
+        "en": "I left my phone at home.",
+        "tr": "Telefonumu evde bıraktım."
+      },
+      {
+        "en": "She has left the office.",
+        "tr": "O ofisten ayrıldı."
+      }
+    ]
+  },
+  {
+    "word": "put",
+    "v2": "put",
+    "v3": "put",
+    "meaning": "koymak",
+    "regular": false,
+    "note": "",
+    "wordId": 4187,
+    "examples": [
+      {
+        "en": "I put my keys on the shelf.",
+        "tr": "Anahtarlarımı rafa koyarım."
+      },
+      {
+        "en": "I put the bag on the table.",
+        "tr": "Çantayı masanın üstüne koydum."
+      },
+      {
+        "en": "I have put the milk in the fridge.",
+        "tr": "Sütü buzdolabına koydum."
+      }
+    ]
+  },
+  {
+    "word": "bring",
+    "v2": "brought",
+    "v3": "brought",
+    "meaning": "getirmek",
+    "regular": false,
+    "note": "",
+    "wordId": 658,
+    "examples": [
+      {
+        "en": "I bring lunch from home.",
+        "tr": "Öğle yemeğimi evden getiririm."
+      },
+      {
+        "en": "I brought some fruit.",
+        "tr": "Biraz meyve getirdim."
+      },
+      {
+        "en": "I have brought your book.",
+        "tr": "Kitabını getirdim."
+      }
+    ]
+  },
+  {
+    "word": "eat",
+    "v2": "ate",
+    "v3": "eaten",
+    "meaning": "yemek",
+    "regular": false,
+    "note": "",
+    "wordId": 1694,
+    "examples": [
+      {
+        "en": "I eat vegetables every day.",
+        "tr": "Her gün sebze yerim."
+      },
+      {
+        "en": "I ate soup for lunch.",
+        "tr": "Öğle yemeğinde çorba içtim."
+      },
+      {
+        "en": "I have already eaten.",
+        "tr": "Zaten yemek yedim."
+      }
+    ]
+  },
+  {
+    "word": "drink",
+    "v2": "drank",
+    "v3": "drunk",
+    "meaning": "içmek",
+    "regular": false,
+    "note": "",
+    "wordId": 1646,
+    "examples": [
+      {
+        "en": "I drink water with my meals.",
+        "tr": "Yemeklerle birlikte su içerim."
+      },
+      {
+        "en": "I drank tea this morning.",
+        "tr": "Bu sabah çay içtim."
+      },
+      {
+        "en": "I have drunk enough water today.",
+        "tr": "Bugün yeterince su içtim."
+      }
+    ]
+  },
+  {
+    "word": "sleep",
+    "v2": "slept",
+    "v3": "slept",
+    "meaning": "uyumak",
+    "regular": false,
+    "note": "",
+    "wordId": 4840,
+    "examples": [
+      {
+        "en": "I sleep for eight hours.",
+        "tr": "Sekiz saat uyurum."
+      },
+      {
+        "en": "I slept well last night.",
+        "tr": "Dün gece iyi uyudum."
+      },
+      {
+        "en": "I have slept in a tent before.",
+        "tr": "Daha önce çadırda uyudum."
+      }
+    ]
+  },
+  {
+    "word": "write",
+    "v2": "wrote",
+    "v3": "written",
+    "meaning": "yazmak",
+    "regular": false,
+    "note": "",
+    "wordId": 5917,
+    "examples": [
+      {
+        "en": "I write in my notebook.",
+        "tr": "Defterime yazarım."
+      },
+      {
+        "en": "I wrote a letter yesterday.",
+        "tr": "Dün bir mektup yazdım."
+      },
+      {
+        "en": "I have written three emails.",
+        "tr": "Üç e-posta yazdım."
+      }
+    ]
+  },
+  {
+    "word": "read",
+    "v2": "read",
+    "v3": "read",
+    "meaning": "okumak",
+    "regular": false,
+    "note": "Yazılış aynı; V1 /riːd/, V2 ve V3 /red/ diye okunur.",
+    "wordId": 4259,
+    "examples": [
+      {
+        "en": "I read before bed.",
+        "tr": "Yatmadan önce kitap okurum."
+      },
+      {
+        "en": "I read that book last week.",
+        "tr": "O kitabı geçen hafta okudum."
+      },
+      {
+        "en": "I have read this article.",
+        "tr": "Bu makaleyi okudum."
+      }
+    ]
+  },
+  {
+    "word": "speak",
+    "v2": "spoke",
+    "v3": "spoken",
+    "meaning": "konuşmak",
+    "regular": false,
+    "note": "",
+    "wordId": 4935,
+    "examples": [
+      {
+        "en": "I speak Turkish.",
+        "tr": "Türkçe konuşurum."
+      },
+      {
+        "en": "I spoke to her yesterday.",
+        "tr": "Dün onunla konuştum."
+      },
+      {
+        "en": "I have spoken to the manager.",
+        "tr": "Müdürle konuştum."
+      }
+    ]
+  },
+  {
+    "word": "buy",
+    "v2": "bought",
+    "v3": "bought",
+    "meaning": "satın almak",
+    "regular": false,
+    "note": "",
+    "wordId": 700,
+    "examples": [
+      {
+        "en": "I buy bread every morning.",
+        "tr": "Her sabah ekmek alırım."
+      },
+      {
+        "en": "I bought a new coat.",
+        "tr": "Yeni bir mont aldım."
+      },
+      {
+        "en": "I have bought the tickets.",
+        "tr": "Biletleri aldım."
+      }
+    ]
+  },
+  {
+    "word": "meet",
+    "v2": "met",
+    "v3": "met",
+    "meaning": "tanışmak; buluşmak",
+    "regular": false,
+    "note": "",
+    "wordId": 3268,
+    "examples": [
+      {
+        "en": "I meet my friends on Fridays.",
+        "tr": "Cuma günleri arkadaşlarımla buluşurum."
+      },
+      {
+        "en": "I met him last year.",
+        "tr": "Onunla geçen yıl tanıştım."
+      },
+      {
+        "en": "I have met her before.",
+        "tr": "Onunla daha önce tanıştım."
+      }
+    ]
+  },
+  {
+    "word": "run",
+    "v2": "ran",
+    "v3": "run",
+    "meaning": "koşmak",
+    "regular": false,
+    "note": "",
+    "wordId": 4554,
+    "examples": [
+      {
+        "en": "I run in the park.",
+        "tr": "Parkta koşarım."
+      },
+      {
+        "en": "I ran five kilometres yesterday.",
+        "tr": "Dün beş kilometre koştum."
+      },
+      {
+        "en": "I have run a marathon.",
+        "tr": "Bir maraton koştum."
+      }
+    ]
+  },
+  {
+    "word": "understand",
+    "v2": "understood",
+    "v3": "understood",
+    "meaning": "anlamak",
+    "regular": false,
+    "note": "",
+    "wordId": 5586,
+    "examples": [
+      {
+        "en": "I understand the question.",
+        "tr": "Soruyu anlıyorum."
+      },
+      {
+        "en": "I understood the explanation.",
+        "tr": "Açıklamayı anladım."
+      },
+      {
+        "en": "I have understood your point.",
+        "tr": "Ne demek istediğini anladım."
+      }
+    ]
+  },
+  {
+    "word": "begin",
+    "v2": "began",
+    "v3": "begun",
+    "meaning": "başlamak",
+    "regular": false,
+    "note": "",
+    "wordId": 499,
+    "examples": [
+      {
+        "en": "I begin work at nine.",
+        "tr": "İşe saat dokuzda başlarım."
+      },
+      {
+        "en": "The lesson began at ten.",
+        "tr": "Ders saat onda başladı."
+      },
+      {
+        "en": "The film has begun.",
+        "tr": "Film başladı."
+      }
+    ]
+  },
+  {
+    "word": "become",
+    "v2": "became",
+    "v3": "become",
+    "meaning": "olmak; hâline gelmek",
+    "regular": false,
+    "note": "",
+    "wordId": 489,
+    "examples": [
+      {
+        "en": "I become tired after long walks.",
+        "tr": "Uzun yürüyüşlerden sonra yorulurum."
+      },
+      {
+        "en": "She became a doctor.",
+        "tr": "O doktor oldu."
+      },
+      {
+        "en": "We have become friends.",
+        "tr": "Arkadaş olduk."
+      }
+    ]
+  },
+  {
+    "word": "keep",
+    "v2": "kept",
+    "v3": "kept",
+    "meaning": "saklamak; tutmak",
+    "regular": false,
+    "note": "",
+    "wordId": 2902,
+    "examples": [
+      {
+        "en": "I keep my promises.",
+        "tr": "Sözlerimi tutarım."
+      },
+      {
+        "en": "I kept the receipt.",
+        "tr": "Fişi sakladım."
+      },
+      {
+        "en": "I have kept your letter.",
+        "tr": "Mektubunu sakladım."
+      }
+    ]
+  },
+  {
+    "word": "hear",
+    "v2": "heard",
+    "v3": "heard",
+    "meaning": "duymak",
+    "regular": false,
+    "note": "",
+    "wordId": 2480,
+    "examples": [
+      {
+        "en": "I hear birds every morning.",
+        "tr": "Her sabah kuş sesleri duyarım."
+      },
+      {
+        "en": "I heard a noise.",
+        "tr": "Bir ses duydum."
+      },
+      {
+        "en": "I have heard the news.",
+        "tr": "Haberi duydum."
+      }
+    ]
+  },
+  {
+    "word": "sit",
+    "v2": "sat",
+    "v3": "sat",
+    "meaning": "oturmak",
+    "regular": false,
+    "note": "",
+    "wordId": 4815,
+    "examples": [
+      {
+        "en": "I sit by the window.",
+        "tr": "Pencerenin yanında otururum."
+      },
+      {
+        "en": "I sat next to Ece.",
+        "tr": "Ece'nin yanına oturdum."
+      },
+      {
+        "en": "I have sat here before.",
+        "tr": "Daha önce burada oturdum."
+      }
+    ]
+  },
+  {
+    "word": "stand",
+    "v2": "stood",
+    "v3": "stood",
+    "meaning": "ayakta durmak",
+    "regular": false,
+    "note": "",
+    "wordId": 5013,
+    "examples": [
+      {
+        "en": "I stand near the door.",
+        "tr": "Kapının yakınında ayakta dururum."
+      },
+      {
+        "en": "I stood in the queue.",
+        "tr": "Sırada bekledim."
+      },
+      {
+        "en": "I have stood here for an hour.",
+        "tr": "Bir saattir burada ayakta duruyorum."
+      }
+    ]
+  },
+  {
+    "word": "pay",
+    "v2": "paid",
+    "v3": "paid",
+    "meaning": "ödemek",
+    "regular": false,
+    "note": "",
+    "wordId": 3801,
+    "examples": [
+      {
+        "en": "I pay by card.",
+        "tr": "Kartla öderim."
+      },
+      {
+        "en": "I paid the bill.",
+        "tr": "Hesabı ödedim."
+      },
+      {
+        "en": "I have paid the rent.",
+        "tr": "Kirayı ödedim."
+      }
+    ]
+  },
+  {
+    "word": "send",
+    "v2": "sent",
+    "v3": "sent",
+    "meaning": "göndermek",
+    "regular": false,
+    "note": "",
+    "wordId": 4671,
+    "examples": [
+      {
+        "en": "I send a message every day.",
+        "tr": "Her gün bir mesaj gönderirim."
+      },
+      {
+        "en": "I sent you a photo.",
+        "tr": "Sana bir fotoğraf gönderdim."
+      },
+      {
+        "en": "I have sent the email.",
+        "tr": "E-postayı gönderdim."
+      }
+    ]
+  },
+  {
+    "word": "wear",
+    "v2": "wore",
+    "v3": "worn",
+    "meaning": "giymek; üzerinde olmak",
+    "regular": false,
+    "note": "",
+    "wordId": 5774,
+    "examples": [
+      {
+        "en": "I wear glasses.",
+        "tr": "Gözlük takarım."
+      },
+      {
+        "en": "I wore a blue shirt.",
+        "tr": "Mavi bir gömlek giydim."
+      },
+      {
+        "en": "I have worn this coat for years.",
+        "tr": "Bu montu yıllardır giyiyorum."
+      }
+    ]
+  },
+  {
+    "word": "lose",
+    "v2": "lost",
+    "v3": "lost",
+    "meaning": "kaybetmek",
+    "regular": false,
+    "note": "",
+    "wordId": 3129,
+    "examples": [
+      {
+        "en": "I often lose my keys.",
+        "tr": "Anahtarlarımı sık sık kaybederim."
+      },
+      {
+        "en": "I lost my ticket.",
+        "tr": "Biletimi kaybettim."
+      },
+      {
+        "en": "I have lost my wallet.",
+        "tr": "Cüzdanımı kaybettim."
+      }
+    ]
+  },
+  {
+    "word": "choose",
+    "v2": "chose",
+    "v3": "chosen",
+    "meaning": "seçmek",
+    "regular": false,
+    "note": "",
+    "wordId": 855,
+    "examples": [
+      {
+        "en": "I choose fresh fruit.",
+        "tr": "Taze meyve seçerim."
+      },
+      {
+        "en": "I chose the red bag.",
+        "tr": "Kırmızı çantayı seçtim."
+      },
+      {
+        "en": "I have chosen a course.",
+        "tr": "Bir kurs seçtim."
+      }
+    ]
+  },
+  {
+    "word": "work",
+    "v2": "worked",
+    "v3": "worked",
+    "meaning": "çalışmak",
+    "regular": true,
+    "note": "",
+    "wordId": 5885,
+    "examples": [
+      {
+        "en": "I work at home.",
+        "tr": "Evde çalışırım."
+      },
+      {
+        "en": "I worked yesterday.",
+        "tr": "Dün çalıştım."
+      },
+      {
+        "en": "I have worked here before.",
+        "tr": "Daha önce burada çalıştım."
+      }
+    ]
+  },
+  {
+    "word": "study",
+    "v2": "studied",
+    "v3": "studied",
+    "meaning": "ders çalışmak; öğrenim görmek",
+    "regular": true,
+    "note": "Ünsüz + y sonunda y → i olur: studied.",
+    "wordId": 5104,
+    "examples": [
+      {
+        "en": "I study English.",
+        "tr": "İngilizce çalışırım."
+      },
+      {
+        "en": "I studied last night.",
+        "tr": "Dün gece ders çalıştım."
+      },
+      {
+        "en": "I have studied this topic.",
+        "tr": "Bu konuyu çalıştım."
+      }
+    ]
+  },
+  {
+    "word": "play",
+    "v2": "played",
+    "v3": "played",
+    "meaning": "oynamak; çalmak",
+    "regular": true,
+    "note": "Ünlü + y: y değişmez; played.",
+    "wordId": 3902,
+    "examples": [
+      {
+        "en": "I play tennis.",
+        "tr": "Tenis oynarım."
+      },
+      {
+        "en": "I played tennis yesterday.",
+        "tr": "Dün tenis oynadım."
+      },
+      {
+        "en": "I have played this game before.",
+        "tr": "Daha önce bu oyunu oynadım."
+      }
+    ]
+  },
+  {
+    "word": "help",
+    "v2": "helped",
+    "v3": "helped",
+    "meaning": "yardım etmek",
+    "regular": true,
+    "note": "",
+    "wordId": 2498,
+    "examples": [
+      {
+        "en": "I help my parents.",
+        "tr": "Aileme yardım ederim."
+      },
+      {
+        "en": "I helped my friend.",
+        "tr": "Arkadaşıma yardım ettim."
+      },
+      {
+        "en": "I have helped many people.",
+        "tr": "Birçok insana yardım ettim."
+      }
+    ]
+  },
+  {
+    "word": "want",
+    "v2": "wanted",
+    "v3": "wanted",
+    "meaning": "istemek",
+    "regular": true,
+    "note": "",
+    "wordId": 5740,
+    "examples": [
+      {
+        "en": "I want some water.",
+        "tr": "Biraz su istiyorum."
+      },
+      {
+        "en": "I wanted to help.",
+        "tr": "Yardım etmek istedim."
+      },
+      {
+        "en": "I have always wanted to travel.",
+        "tr": "Her zaman seyahat etmek istemişimdir."
+      }
+    ]
+  },
+  {
+    "word": "need",
+    "v2": "needed",
+    "v3": "needed",
+    "meaning": "ihtiyaç duymak",
+    "regular": true,
+    "note": "",
+    "wordId": 3461,
+    "examples": [
+      {
+        "en": "I need a pen.",
+        "tr": "Bir kaleme ihtiyacım var."
+      },
+      {
+        "en": "I needed more time.",
+        "tr": "Daha fazla zamana ihtiyacım vardı."
+      },
+      {
+        "en": "I have needed help several times.",
+        "tr": "Birkaç kez yardıma ihtiyaç duydum."
+      }
+    ]
+  },
+  {
+    "word": "ask",
+    "v2": "asked",
+    "v3": "asked",
+    "meaning": "sormak; istemek",
+    "regular": true,
+    "note": "",
+    "wordId": 337,
+    "examples": [
+      {
+        "en": "I ask questions in class.",
+        "tr": "Derste soru sorarım."
+      },
+      {
+        "en": "I asked her a question.",
+        "tr": "Ona bir soru sordum."
+      },
+      {
+        "en": "I have asked for help.",
+        "tr": "Yardım istedim."
+      }
+    ]
+  },
+  {
+    "word": "answer",
+    "v2": "answered",
+    "v3": "answered",
+    "meaning": "cevaplamak",
+    "regular": true,
+    "note": "",
+    "wordId": 252,
+    "examples": [
+      {
+        "en": "I answer emails every morning.",
+        "tr": "Her sabah e-postaları cevaplarım."
+      },
+      {
+        "en": "I answered the question.",
+        "tr": "Soruyu cevapladım."
+      },
+      {
+        "en": "I have answered all the questions.",
+        "tr": "Bütün soruları cevapladım."
+      }
+    ]
+  },
+  {
+    "word": "call",
+    "v2": "called",
+    "v3": "called",
+    "meaning": "aramak; çağırmak",
+    "regular": true,
+    "note": "",
+    "wordId": 712,
+    "examples": [
+      {
+        "en": "I call my mother every day.",
+        "tr": "Annemi her gün ararım."
+      },
+      {
+        "en": "I called you yesterday.",
+        "tr": "Seni dün aradım."
+      },
+      {
+        "en": "I have called him twice.",
+        "tr": "Onu iki kez aradım."
+      }
+    ]
+  },
+  {
+    "word": "visit",
+    "v2": "visited",
+    "v3": "visited",
+    "meaning": "ziyaret etmek",
+    "regular": true,
+    "note": "",
+    "wordId": 5714,
+    "examples": [
+      {
+        "en": "I visit my grandparents often.",
+        "tr": "Büyükanne ve büyükbabamı sık sık ziyaret ederim."
+      },
+      {
+        "en": "I visited Ece last week.",
+        "tr": "Geçen hafta Ece'yi ziyaret ettim."
+      },
+      {
+        "en": "I have visited Rome.",
+        "tr": "Roma'yı ziyaret ettim."
+      }
+    ]
+  },
+  {
+    "word": "watch",
+    "v2": "watched",
+    "v3": "watched",
+    "meaning": "izlemek",
+    "regular": true,
+    "note": "",
+    "wordId": 5760,
+    "examples": [
+      {
+        "en": "I watch the news.",
+        "tr": "Haberleri izlerim."
+      },
+      {
+        "en": "I watched a film last night.",
+        "tr": "Dün gece bir film izledim."
+      },
+      {
+        "en": "I have watched this video.",
+        "tr": "Bu videoyu izledim."
+      }
+    ]
+  },
+  {
+    "word": "listen",
+    "v2": "listened",
+    "v3": "listened",
+    "meaning": "dinlemek",
+    "regular": true,
+    "note": "Bir şeyi dinlemek: listen to something.",
+    "wordId": 3078,
+    "examples": [
+      {
+        "en": "I listen to music.",
+        "tr": "Müzik dinlerim."
+      },
+      {
+        "en": "I listened to the teacher.",
+        "tr": "Öğretmeni dinledim."
+      },
+      {
+        "en": "I have listened to this song many times.",
+        "tr": "Bu şarkıyı birçok kez dinledim."
+      }
+    ]
+  },
+  {
+    "word": "open",
+    "v2": "opened",
+    "v3": "opened",
+    "meaning": "açmak",
+    "regular": true,
+    "note": "",
+    "wordId": 3627,
+    "examples": [
+      {
+        "en": "I open the window every morning.",
+        "tr": "Her sabah pencereyi açarım."
+      },
+      {
+        "en": "I opened the door.",
+        "tr": "Kapıyı açtım."
+      },
+      {
+        "en": "I have opened the box.",
+        "tr": "Kutuyu açtım."
+      }
+    ]
+  },
+  {
+    "word": "close",
+    "v2": "closed",
+    "v3": "closed",
+    "meaning": "kapatmak",
+    "regular": true,
+    "note": "",
+    "wordId": 909,
+    "examples": [
+      {
+        "en": "I close the shop at six.",
+        "tr": "Dükkânı saat altıda kapatırım."
+      },
+      {
+        "en": "I closed the window.",
+        "tr": "Pencereyi kapattım."
+      },
+      {
+        "en": "I have closed the door.",
+        "tr": "Kapıyı kapattım."
+      }
+    ]
+  },
+  {
+    "word": "start",
+    "v2": "started",
+    "v3": "started",
+    "meaning": "başlamak",
+    "regular": true,
+    "note": "",
+    "wordId": 5022,
+    "examples": [
+      {
+        "en": "I start work at nine.",
+        "tr": "İşe saat dokuzda başlarım."
+      },
+      {
+        "en": "I started a new job.",
+        "tr": "Yeni bir işe başladım."
+      },
+      {
+        "en": "I have started learning English.",
+        "tr": "İngilizce öğrenmeye başladım."
+      }
+    ]
+  },
+  {
+    "word": "finish",
+    "v2": "finished",
+    "v3": "finished",
+    "meaning": "bitirmek",
+    "regular": true,
+    "note": "",
+    "wordId": 2106,
+    "examples": [
+      {
+        "en": "I finish work at five.",
+        "tr": "İşi saat beşte bitiririm."
+      },
+      {
+        "en": "I finished the report.",
+        "tr": "Raporu bitirdim."
+      },
+      {
+        "en": "I have finished my homework.",
+        "tr": "Ödevimi bitirdim."
+      }
+    ]
+  },
+  {
+    "word": "stop",
+    "v2": "stopped",
+    "v3": "stopped",
+    "meaning": "durmak; durdurmak",
+    "regular": true,
+    "note": "Kısa vurgulu ünlü + tek son ünsüz: p çiftlenir; stopped.",
+    "wordId": 5061,
+    "examples": [
+      {
+        "en": "I stop at red lights.",
+        "tr": "Kırmızı ışıkta dururum."
+      },
+      {
+        "en": "I stopped the car.",
+        "tr": "Arabayı durdurdum."
+      },
+      {
+        "en": "It has stopped raining.",
+        "tr": "Yağmur durdu."
+      }
+    ]
+  },
+  {
+    "word": "try",
+    "v2": "tried",
+    "v3": "tried",
+    "meaning": "denemek; çabalamak",
+    "regular": true,
+    "note": "Ünsüz + y sonunda y → i olur: tried.",
+    "wordId": 5542,
+    "examples": [
+      {
+        "en": "I try new recipes.",
+        "tr": "Yeni tarifler denerim."
+      },
+      {
+        "en": "I tried to call you.",
+        "tr": "Seni aramaya çalıştım."
+      },
+      {
+        "en": "I have tried sushi.",
+        "tr": "Suşi denedim."
+      }
+    ]
+  },
+  {
+    "word": "use",
+    "v2": "used",
+    "v3": "used",
+    "meaning": "kullanmak",
+    "regular": true,
+    "note": "",
+    "wordId": 5641,
+    "examples": [
+      {
+        "en": "I use this app every day.",
+        "tr": "Bu uygulamayı her gün kullanırım."
+      },
+      {
+        "en": "I used your pen.",
+        "tr": "Kalemini kullandım."
+      },
+      {
+        "en": "I have used this tool before.",
+        "tr": "Daha önce bu aracı kullandım."
+      }
+    ]
+  },
+  {
+    "word": "learn",
+    "v2": "learned / learnt",
+    "v3": "learned / learnt",
+    "meaning": "öğrenmek",
+    "regular": true,
+    "note": "Learned düzenli, learnt alternatif düzensiz biçimdir. İkisi de kabul edilir.",
+    "wordId": 2994,
+    "examples": [
+      {
+        "en": "I learn new words every day.",
+        "tr": "Her gün yeni kelimeler öğrenirim."
+      },
+      {
+        "en": "I learned ten words yesterday.",
+        "tr": "Dün on kelime öğrendim."
+      },
+      {
+        "en": "I have learned a lot.",
+        "tr": "Çok şey öğrendim."
+      }
+    ]
+  }
+]

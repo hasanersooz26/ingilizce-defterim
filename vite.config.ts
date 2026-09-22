@@ -52,6 +52,8 @@ export default defineConfig(async () => {
 
   return {
     server: {
+      // Allow the temporary HTTPS preview host used when testing the PWA on a phone.
+      allowedHosts: [".loca.lt"],
       ...(managedLinux ? { host: "0.0.0.0", allowedHosts: ["terminal.local"] } : {}),
       ...(isCodexSeatbeltSandbox ? { watch: { useFsEvents: false, usePolling: true } } : {}),
     },

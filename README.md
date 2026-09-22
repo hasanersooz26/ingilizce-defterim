@@ -21,6 +21,10 @@ Cevap kontrolü deterministiktir. Noktalama, büyük harf, yaygın kısaltmalar 
 
 Seslendirme tarayıcının SpeechSynthesis desteğini kullanır; İngiliz/Amerikan tercihi ve yavaş dinleme vardır. Ses kalitesi ve mevcut sesler cihaza bağlıdır. İnsan ses kaydı veya konuşma puanlama özelliği yoktur.
 
+## Telefona kurulum
+
+Uygulama PWA olarak hazırlanmıştır; HTTPS üzerinden açıldığında telefonda uygulama gibi ana ekrana eklenebilir. Android Chrome'da menüden **Uygulamayı yükle** veya **Ana ekrana ekle**, iPhone Safari'de paylaş menüsünden **Ana Ekrana Ekle** seçilir. Destekleyen tarayıcılarda üst çubuktaki **Telefona yükle** düğmesi de aynı kurulumu başlatır. `localhost:5173` yalnızca geliştirme bilgisayarında çalışır; telefon kurulumu için yayımlanmış HTTPS adresi gerekir.
+
 ## Geliştirme
 
 Node.js 22.13 veya üzeri gerekir. Kurulum: npm run install:ci. Geliştirme: npm run dev. Derleme: npm run build. Derlenmiş Worker kontrolü: npm run start.

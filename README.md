@@ -37,6 +37,10 @@ node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1
 
 Aynı migration'ı aynı veritabanına tekrar uygulamayın. Yeni değişikliklerde npm run db:generate ile yeni migration ekleyin.
 
+## Android APK
+
+Android geliştirme için `npm run android:apk` komutu debug imzalı APK üretir ve proje klasörünün bir üstüne `İngilizce-Defterim.apk` olarak kopyalar. Uygulama kelime, ders ve alıştırma içeriğini APK içinde taşır; mobil çalışma ilerlemesi cihazda saklanır ve web hesabıyla eşitlenmez.
+
 ## Kontroller
 
 - node node_modules/typescript/bin/tsc --noEmit

@@ -15,6 +15,7 @@ import { lessons, verbs, readings, allQuestions, groupNames } from "@/content";
 import { chooseDeck, type Word, type StudyState, type Verb } from "@/lib/study";
 import { WordCard, Quiz, LessonView, ReadingView, AudioButton, ExampleRow, type Save } from "@/components/study-ui";
 import { useStudyTools } from "@/hooks/use-study-tools";
+import { studyFetch } from "@/lib/study-client";
 
 const menu=[["today","Bugünkü çalışmam",CalendarDays],["words","Kelime defterim",BookOpen],["tenses","Zamanlar",Layers],["auxiliary","Yardımcı fiiller",MessageCircle],["verbs","Düzenli & düzensiz fiiller",Repeat2],["topics","Kalıplar & dil bilgisi",GraduationCap],["practice","Cümle atölyesi",PenLine],["reading","Oku & dinle",Headphones],["mistakes","Yanlışlarım",Repeat2]] as const;
 type InstallPromptEvent=Event&{prompt:()=>Promise<void>;userChoice:Promise<{outcome:"accepted"|"dismissed"}>};
@@ -54,7 +55,7 @@ export default function Home(){
   let w:Word[]=[],s:StudyState=blank;
   const result=await Promise.allSettled([
    fetch("/words.json").then(r=>{if(!r.ok)throw Error();return r.json()}).then(data=>{if(!Array.isArray(data)||data.length!==5946)throw Error();w=data;setWords(data)}),
-   fetch("/api/study").then(async r=>{const data=await r.json() as StudyState & {error?:string};if(!r.ok)throw Error(data.error||"İlerleme yüklenemedi.");s=data;setState(data)})
+   studyFetch("/api/study").then(async r=>{const data=await r.json() as StudyState & {error?:string};if(!r.ok)throw Error(data.error||"İlerleme yüklenemedi.");s=data;setState(data)})
   ]);
   if(result[0].status==="rejected")setDataError("Kelime listesi yüklenemedi. Bağlantını kontrol edip yeniden dene.");
   if(result[1].status==="rejected")setError(result[1].reason?.message||"İlerleme yüklenemedi.");
@@ -65,7 +66,7 @@ export default function Home(){
   if(saveLock.current)return null;
   saveLock.current=true;setBusy(true);
   try{
-   const r=await fetch("/api/study",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+   const r=await studyFetch("/api/study",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
    const data=await r.json() as NonNullable<Awaited<ReturnType<Save>>> & {error?:string};if(!r.ok)throw Error(data.error||"Kaydedilemedi.");
    setState(data.state);setError("");return data;
   }catch(e){toast.error(e instanceof Error?e.message:"Kaydedilemedi. Yeniden dene.");return null}

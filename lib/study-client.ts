@@ -57,7 +57,7 @@ function response(data: unknown, status = 200) {
 
 async function mobileStudyFetch(input: RequestInfo | URL, init?: RequestInit): Promise<Response> {
   if (!Capacitor.isNativePlatform() || String(input) !== "/api/study") return fetch(input, init);
-  let store = readStore();
+  const store = readStore();
   if (!init?.method || init.method === "GET") return response(snapshot(store));
 
   let body: Record<string, unknown>;

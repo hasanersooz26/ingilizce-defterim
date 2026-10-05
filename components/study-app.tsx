@@ -1,6 +1,6 @@
 "use client";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { BookOpen, CalendarDays, Layers, MessageCircle, PenLine, Repeat2, Volume2, ArrowRight, Check, GraduationCap, Headphones, Search, ChevronLeft, ChevronRight, Shuffle, CircleAlert } from "lucide-react";
+import { BookOpen, CalendarDays, Layers, MessageCircle, PenLine, Repeat2, ArrowRight, Check, GraduationCap, Headphones, Search, ChevronLeft, ChevronRight, Shuffle, CircleAlert } from "lucide-react";
 import { Sidebar, SidebarProvider, SidebarContent, SidebarHeader, SidebarFooter, SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarTrigger, SidebarInset, useSidebar } from "@/components/ui/sidebar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -47,7 +47,7 @@ export default function Home(){
  useEffect(()=>{
   const update=()=>{let v="today";try{v=decodeURIComponent(window.location.hash.slice(1))||"today"}catch{};const valid=menu.some(m=>m[0]===v)||(v.startsWith("lesson/")&&lessons.some(l=>l.id===v.split("/")[1]));setView(valid?v:"today");setQuery("");setFilter("all");setPage(0);window.scrollTo(0,0);requestAnimationFrame(()=>mainRef.current?.focus({preventScroll:true}));};
   update();window.addEventListener("hashchange",update);
-  try{const a=localStorage.getItem("english-accent");if(a==="en-GB"||a==="en-US")setAccent(a)}catch{}
+  try{const a=localStorage.getItem("english-accent");if(a==="en-GB"||a==="en-US")requestAnimationFrame(()=>setAccent(a))}catch{}
   return ()=>{window.removeEventListener("hashchange",update);window.speechSynthesis?.cancel()}
  },[]);
  const load=useCallback(async()=>{
@@ -61,7 +61,7 @@ export default function Home(){
   if(result[1].status==="rejected")setError(result[1].reason?.message||"İlerleme yüklenemedi.");
   setDeck(chooseDeck(w,s.progress));setCardIndex(0);setLoading(false);
  },[]);
- useEffect(()=>{void load()},[load]);
+ useEffect(()=>{const frame=requestAnimationFrame(()=>void load());return()=>cancelAnimationFrame(frame)},[load]);
  const save:Save=useCallback(async body=>{
   if(saveLock.current)return null;
   saveLock.current=true;setBusy(true);
@@ -73,12 +73,15 @@ export default function Home(){
   finally{saveLock.current=false;setBusy(false)}
  },[]);
  const pmap=useMemo(()=>new Map(state.progress.map(p=>[p.item_key,p])),[state]);
+ // Due-state presentation intentionally reflects wall-clock time at render.
+ // eslint-disable-next-line react-hooks/purity
+ const now=Date.now();
  const disabled=loading||!!error;
  const practice=useCallback((id:string)=>{setPracticeType("all");setQuestionId(id);go("practice")},[go]);
  const visibleWords=useMemo(()=>{
   const q=query.trim().toLocaleLowerCase("tr").replace(/ı/g,"i");
-  return words.filter(w=>(!q||w.word.toLocaleLowerCase("tr").replace(/ı/g,"i").includes(q)||w.turkish_meaning.toLocaleLowerCase("tr").replace(/ı/g,"i").includes(q))&&(filter==="all"||(filter==="due"&&!!pmap.get("word:"+w.id)&&pmap.get("word:"+w.id)!.due<=Date.now())||(filter==="new"&&!pmap.has("word:"+w.id))||(filter==="learning"&&pmap.has("word:"+w.id))));
- },[words,query,filter,pmap]);
+  return words.filter(w=>(!q||w.word.toLocaleLowerCase("tr").replace(/ı/g,"i").includes(q)||w.turkish_meaning.toLocaleLowerCase("tr").replace(/ı/g,"i").includes(q))&&(filter==="all"||(filter==="due"&&!!pmap.get("word:"+w.id)&&pmap.get("word:"+w.id)!.due<=now)||(filter==="new"&&!pmap.has("word:"+w.id))||(filter==="learning"&&pmap.has("word:"+w.id))));
+ },[words,query,filter,pmap,now]);
  const lookupWords=useMemo(()=>{if(!lookup)return [];const q=lookup.toLowerCase();let matches=words.filter(w=>w.word.toLowerCase()===q);if(!matches.length){const v=verbs.find(v=>[v.v2,v.v3].flatMap(x=>x.split(" / ")).includes(q));if(v)matches=words.filter(w=>w.word===v.word);else if(q.endsWith("s"))matches=words.filter(w=>w.word===q.slice(0,-1));}return matches},[lookup,words]);
  const activeLesson=lessons.find(l=>view==="lesson/"+l.id);
  const questions=allQuestions.filter(q=>practiceType==="all"||(practiceType==="verbs"?q.id.startsWith("verb-"):practiceType==="order"?q.id.startsWith("order-"):practiceType==="transform"?q.id.startsWith("transform-"):practiceType==="translation"?!q.id.startsWith("verb-")&&!q.id.startsWith("order-")&&!q.id.startsWith("transform-")&&!q.prompt.includes("___"):q.prompt.includes("___")));
@@ -92,7 +95,7 @@ export default function Home(){
   if(result){setCardIndex(i=>i+1);rateRequest.current=null}
  }
  const completedLesson=lessons.find(l=>!pmap.has("lesson:"+l.id))||[...lessons].sort((a,b)=>(pmap.get("lesson:"+a.id)?.updated||0)-(pmap.get("lesson:"+b.id)?.updated||0))[0];
- const dueCount=state.progress.filter(p=>p.item_key.startsWith("word:")&&p.due<=Date.now()).length;
+ const dueCount=state.progress.filter(p=>p.item_key.startsWith("word:")&&p.due<=now).length;
  const dailyValue=(Math.min(10,state.today.words)/10+Math.min(1,state.today.lessons)+Math.min(3,state.today.questions)/3)/3*100;
  const mistakes=state.progress.filter(p=>p.last_rating==="again").sort((a,b)=>b.updated-a.updated);
  const contentView=activeLesson?null:titles[view]||titles.today;

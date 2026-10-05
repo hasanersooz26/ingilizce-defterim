@@ -24,12 +24,17 @@ export async function POST(request:Request){
  const user=await getChatGPTUser();if(!user)return reply({error:"Kaydetmek için hesabınla giriş yapmalısın."},401);
  const origin=request.headers.get("origin");
  if(origin && origin!==new URL(request.url).origin)return reply({error:"Geçersiz istek kaynağı."},403);
- let b:any;try{b=await request.json()}catch{return reply({error:"Geçersiz istek."},400)}
+ let b:Record<string,unknown>;
+ try{
+  const parsed:unknown=await request.json();
+  if(!parsed||typeof parsed!=="object"||Array.isArray(parsed))return reply({error:"Geçersiz istek."},400);
+  b=parsed as Record<string,unknown>;
+ }catch{return reply({error:"Geçersiz istek."},400)}
  if(!b||typeof b.requestId!=="string"||!/^[-a-zA-Z0-9]{10,80}$/.test(b.requestId))return reply({error:"Geçersiz istek kimliği."},400);
- let kind="",key="",rating="",answer="",feedback:any=null;
- if(b.action==="review"&&Number.isInteger(b.wordId)&&b.wordId>=1&&b.wordId<=5946&&["again","hard","good"].includes(b.rating)){
+ let kind="",key="",rating="",answer="";let feedback:unknown=null;
+ if(b.action==="review"&&typeof b.wordId==="number"&&Number.isInteger(b.wordId)&&b.wordId>=1&&b.wordId<=5946&&typeof b.rating==="string"&&["again","hard","good"].includes(b.rating)){
   kind="word";key="word:"+b.wordId;rating=b.rating;
- }else if(b.action==="completeLesson"&&lessonIds.has(b.lessonId)){
+ }else if(b.action==="completeLesson"&&typeof b.lessonId==="string"&&lessonIds.has(b.lessonId)){
   kind="lesson";key="lesson:"+b.lessonId;rating="good";
  }else if(b.action==="answer"&&questions.has(b.questionId)&&typeof b.answer==="string"&&b.answer.trim().length>0&&b.answer.length<=600){
   const q=questions.get(b.questionId)!;const correct=b.selfCorrect===true||checkAnswer(b.answer,q.answers);

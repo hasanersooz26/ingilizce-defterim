@@ -1,64 +1,114 @@
-# İngilizce Defterim
+<p align="center">
+  <img src="assets/ingilizce-defterim-cover.svg" alt="İngilizce Defterim" width="100%">
+</p>
 
-Kişisel İngilizce çalışma uygulaması. Türkçe açıklamalarla kelime tekrarı, dil bilgisi, okuma, dinleme ve cümle pratiği sunar. CEFR alanı veya A1–B2 sınıflaması kullanılmaz.
+<p align="center">
+  <strong>Kelime, dil bilgisi, okuma ve alıştırmayı tek günlük çalışma akışında birleştiren kişisel İngilizce uygulaması.</strong>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-16-000000?logo=nextdotjs&logoColor=white" alt="Next.js">
+  <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black" alt="React">
+  <img src="https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white" alt="TypeScript">
+  <img src="https://img.shields.io/badge/Cloudflare-D1-F38020?logo=cloudflare&logoColor=white" alt="Cloudflare D1">
+  <img src="https://img.shields.io/badge/Capacitor-Android-119EFF?logo=capacitor&logoColor=white" alt="Capacitor Android">
+  <img src="https://img.shields.io/badge/PWA-Installable-5A0FC8?logo=pwa&logoColor=white" alt="PWA">
+</p>
+
+## Proje özeti
+
+**İngilizce Defterim**, ezber listesinden fazlasını sunan kişisel bir çalışma uygulamasıdır. Kelime tekrarı, Türkçe anlatımlı dil bilgisi, fiil biçimleri, okuma parçaları, dinleme ve farklı soru türlerini günlük ve takip edilebilir bir akışta bir araya getirir.
+
+Uygulama web üzerinde kurulabilir bir PWA'dır; aynı içerik Capacitor ile Android uygulamasına da paketlenebilir.
 
 ## İçerik
 
-- 5.946 kelime kaydı; asıl words.json dosyasının aynı kopyası.
-- 39 ders: 12 zaman, 10 yardımcı fiil konusu, 10 dil bilgisi konusu, 4 kalıp konusu ve 3 sık karıştırılan kelime konusu.
-- Zaman başına 15 örnek; derslerde toplam 376 İngilizce–Türkçe örnek.
-- 60 fiil, her birinde V1/V2/V3, üç çevirili örnek ve sözlük bağlantısı.
-- 4 okuma/diyalog, 24 çevirili cümle.
-- 205 alıştırma: cümle yazma, boşluk doldurma, fiil biçimi, 12 kelime sıralama ve 12 olumsuz/soru dönüşümü.
+| Bölüm | Kapsam |
+|---|---:|
+| Kelime kayıtları | 5.946 |
+| Farklı yazılış | 4.961 |
+| Ders | 39 |
+| Ders örneği | 376 |
+| Fiil | 60 |
+| Okuma ve diyalog | 4 |
+| Alıştırma | 205 |
 
-## Nasıl çalışır?
+## Özellikler
 
-Günlük akış 10 kelime, 1 konu ve 3 soru önerir. Tekrar edilecek kelimeler önce gelir; sonra yeni kelimeler seçilir. Tekrar edelim 10 dakika, zorlandım 1 gün; hatırladım yanıtı 1, 3, 7, 14, 30 ve 60 günlük aralıklara ilerler. Bu anlaşılır bir tekrar planıdır; öğrenme garantisi veya kişiye göre doğrulanmış bir optimizasyon değildir.
+- Her gün **10 kelime + 1 konu + 3 soru** öneren çalışma planı
+- Zorlanılan kelimeleri önceleyen aralıklı tekrar akışı
+- 12 zaman, yardımcı fiiller, temel dil bilgisi ve sık karıştırılan kelimeler
+- Cümle yazma, boşluk doldurma, fiil biçimi, kelime sıralama ve dönüşüm soruları
+- İngiliz ve Amerikan telaffuzu için tarayıcı tabanlı seslendirme
+- Son 7 günlük çalışma, yanlışlar ve tamamlanan dersler için ilerleme takibi
+- Aynı işlemin iki kez sayılmasını engelleyen idempotent kayıt sistemi
+- PWA kurulumu ve Capacitor tabanlı Android paketleme
 
-İlerleme, yanlışlar ve ders tamamlamaları D1 üzerinde kullanıcıya göre saklanır. localStorage yalnızca cihazın dinleme tercihini saklar. Son 7 gün, İstanbul tarihine göre hesaplanır. Aynı işlem kimliğiyle yeniden gönderilen kayıt iki kez sayılmaz. Yanlış cevap doğru yanıtlandığında aktif yanlışlar listesinden çıkar; geçmişte kaç kez zorlanıldığı korunur.
+## Tekrar yaklaşımı
 
-Cevap kontrolü deterministiktir. Noktalama, büyük harf, yaygın kısaltmalar ve kayıtlı alternatifler kabul edilir. Açık uçlu cevaplarda tüm eşanlamlı ifadeleri anlayan bir yapay zekâ puanlaması yoktur. Kullanıcı model cevaplarla karşılaştırıp kendi doğru alternatifini işaretleyebilir. Bu özellik açıkça kendini değerlendirme olarak sunulur.
+Yanıta göre tekrar aralığı anlaşılır bir kuralla ilerler:
 
-Seslendirme tarayıcının SpeechSynthesis desteğini kullanır; İngiliz/Amerikan tercihi ve yavaş dinleme vardır. Ses kalitesi ve mevcut sesler cihaza bağlıdır. İnsan ses kaydı veya konuşma puanlama özelliği yoktur.
+- **Tekrar edelim:** 10 dakika
+- **Zorlandım:** 1 gün
+- **Hatırladım:** 1 → 3 → 7 → 14 → 30 → 60 gün
 
-## Telefona kurulum
+Bu mekanizma kişisel çalışma düzeni sunar; bilimsel olarak kişiye özel optimize edilmiş bir öğrenme garantisi iddia etmez.
 
-Uygulama PWA olarak hazırlanmıştır; HTTPS üzerinden açıldığında telefonda uygulama gibi ana ekrana eklenebilir. Android Chrome'da menüden **Uygulamayı yükle** veya **Ana ekrana ekle**, iPhone Safari'de paylaş menüsünden **Ana Ekrana Ekle** seçilir. Destekleyen tarayıcılarda üst çubuktaki **Telefona yükle** düğmesi de aynı kurulumu başlatır. `localhost:5173` yalnızca geliştirme bilgisayarında çalışır; telefon kurulumu için yayımlanmış HTTPS adresi gerekir.
+## Mimari
 
-## Geliştirme
+```mermaid
+flowchart LR
+    A[Next.js / React UI] --> B[Study Engine]
+    B --> C[Words and Lesson Content]
+    B --> D[Cloudflare Worker API]
+    D --> E[(Cloudflare D1)]
+    A --> F[PWA]
+    A --> G[Capacitor Android]
+    H[SpeechSynthesis] --> A
+```
 
-Node.js 22.13 veya üzeri gerekir. Kurulum: npm run install:ci. Geliştirme: npm run dev. Derleme: npm run build. Derlenmiş Worker kontrolü: npm run start.
+```text
+ingilizce-defterim/
+├── app/                 # Sayfalar ve stiller
+├── components/          # Çalışma ekranları ve UI bileşenleri
+├── content/             # Ders, fiil, okuma ve alıştırma verileri
+├── db/                  # D1/Drizzle şeması
+├── drizzle/             # Veritabanı migration'ı
+├── public/              # PWA manifesti, service worker ve kelime verisi
+├── tests/               # Çalışma motoru ve API kontrolleri
+└── android/             # Capacitor Android projesi
+```
 
-Yerel giriş, starter'ın yalnızca loopback geliştirme ortamında etkin olan giriş benzetimiyle yapılır. Yayında Sites özel erişimi ve yönlendirdiği kullanıcı kimliği kullanılır. Kullanıcı kimliğini tarayıcı verisinden kabul eden bir uygulama yolu yoktur.
+## Yerel geliştirme
 
-Yeni veritabanında drizzle/0000_tearful_payback.sql uygulanır. Yayında migration'ı Sites uygular. Yerelde derlemeden sonra:
+Gereksinim: **Node.js 22.13 veya üzeri**
 
-node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0000_tearful_payback.sql
+```bash
+npm run install:ci
+npm run dev
+```
 
-Aynı migration'ı aynı veritabanına tekrar uygulamayın. Yeni değişikliklerde npm run db:generate ile yeni migration ekleyin.
+Kalite kontrolleri:
 
-## Android APK
+```bash
+npm run lint
+node --experimental-strip-types --test tests/study.test.mjs
+npm run build
+```
 
-Android geliştirme için `npm run android:apk` komutu debug imzalı APK üretir ve proje klasörünün bir üstüne `İngilizce-Defterim.apk` olarak kopyalar. Uygulama kelime, ders ve alıştırma içeriğini APK içinde taşır; mobil çalışma ilerlemesi cihazda saklanır ve web hesabıyla eşitlenmez.
+Android debug APK:
 
-## Kontroller
+```bash
+npm run android:apk
+```
 
-- node node_modules/typescript/bin/tsc --noEmit
-- node --experimental-strip-types --test tests/study.test.mjs
-- Yerel derlenmiş Worker 8787 portunda çalışırken node tests/api-check.mjs. Bu test ayrı bir QA kullanıcı kimliğiyle yalnızca yerel veritabanına yazar.
+## Gizlilik ve kapsam
 
-İçerik üretimi: Python ile content/build-content.py ve content/build-verbs.py. Hazır JSON'lar uygulamayla birlikte tutulur; uygulamayı kullanmak için Python gerekmez.
+- İlerleme ve yanlışlar kullanıcı kimliğine göre D1 üzerinde saklanır.
+- Mobil sürümde ilerleme cihazda kalır ve web hesabıyla eşitlenmez.
+- `localStorage` yalnızca cihazın dinleme tercihi için kullanılır.
+- Açık uçlu cevaplar yapay zekâ tarafından puanlanmaz; kullanıcı alternatif cevabını kendisi değerlendirebilir.
+- Seslendirme cihazın `SpeechSynthesis` desteğine bağlıdır; insan ses kaydı veya konuşma puanlama yoktur.
+- Kelime verisi, kullanıcı tarafından sağlanan KelimeLog içeriğinden düzenlenmiştir; resmî Oxford listesinin eksiksizliği iddia edilmez.
 
-## Kaynak ve kapsam
-
-Kelime verisi kullanıcının sağladığı KelimeLog HTML dosyasından düzenlenmiştir. Önceki kontrol kapsamı üst dizindeki kontrol_raporu.md dosyasındadır. Resmî Oxford kapsamı iddiası yapılmaz.
-
-Dersler, çeviriler ve alıştırmalar bu uygulama için yazıldı. Kullanım ayrımları için başvurulan kaynaklar:
-
-- https://dictionary.cambridge.org/grammar/british-grammar/could
-- https://dictionary.cambridge.org/grammar/british-grammar/modality-tense
-- https://dictionary.cambridge.org/grammar/british-grammar/modality-meanings-and-uses
-- https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2/future-continuous-future-perfect
-- https://downloads.bbc.co.uk/learningenglish/intermediate/unit30/b2_u30_6min_grammar_future_perfect_continuous.pdf
-
-Örnekler bu kaynaklardan topluca kopyalanmadı. Teknik içerik kontrolleri bağımsız bir uzman tarafından her cümlenin incelendiği anlamına gelmez.
+Güvenlik bildirimleri için [`SECURITY.md`](SECURITY.md) dosyasını inceleyin.
